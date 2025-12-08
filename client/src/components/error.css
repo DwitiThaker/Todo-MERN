@@ -1,0 +1,28 @@
+.error-page {
+
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Gradient 404 */
+.header-error {
+  font-size: 200px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+/* Sub-heading */
+.error-page h4 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Paragraph */
+.error-page p {
+  font-size: 18px;
+  max-width: 420px;
+  line-height: 1.6;
+}
