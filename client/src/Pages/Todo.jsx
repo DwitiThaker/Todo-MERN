@@ -22,7 +22,7 @@ export const Todo = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/todo/read_all_todos",
+        "https://todo-mern-fgws.onrender.com/api/todo/read_all_todos",
         {
           method: "GET",
           headers: {
@@ -56,7 +56,7 @@ export const Todo = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/todo/view_todo_by_id/${search}`,
+        `https://todo-mern-fgws.onrender.com/api/todo/view_todo_by_id/${search}`,
         {
           method: "GET",
           headers: {
@@ -83,7 +83,7 @@ export const Todo = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/todo/delete_todo_by_id/${id}`,
+        `https://todo-mern-fgws.onrender.com/api/todo/delete_todo_by_id/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -210,39 +210,3 @@ export const Todo = () => {
   );
 };
 
-{
-  /* {!searchResult && (
-            <>
-              <h3 style={{ marginTop: "20px" }}>All Your Tasks</h3>
-
-              {loading ? (
-                <p>Loading...</p>
-              ) : todos.length === 0 ? (
-                <p>No tasks found.</p>
-              ) : (
-                todos.map((todo) => (
-                  <div key={todo._id}>
-                    <div className="todo-container">
-                      <div className="card">{todo.title}</div>
-                      <div className="desc">
-                        <p>{todo.description}</p>
-                      </div>
-
-                      <div className="edit">
-                        <NavLink to={`/edit/${todo._id}`}>Edit</NavLink>
-                      </div>
-
-                      <div className="delete" onClick={() => deleteBtn(todo._id)}>
-                        Delete
-                      </div>
-
-                      <div className="status">
-                        <input type="checkbox" />
-                      </div>
-                    </div>
-                  </div>
-                ))
-              )}
-            </>
-          )} */
-}

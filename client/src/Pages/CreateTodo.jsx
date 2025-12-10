@@ -19,7 +19,7 @@ export const CreateTodo = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/todo/create_todo`,
+        `https://todo-mern-fgws.onrender.com/api/todo/create_todo`,
         {
           method: "POST",
           headers: {

@@ -18,7 +18,7 @@ export const EditTodo = () => {
   const loadTask = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/todo/view_todo_by_id/${id}`,
+        `https://todo-mern-fgws.onrender.com/api/todo/view_todo_by_id/${id}`,
         {
           method: "GET",
           headers: {
@@ -59,7 +59,7 @@ export const EditTodo = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/todo/update_todo_by_id/${id}`,
+        `https://todo-mern-fgws.onrender.com/api/todo/update_todo_by_id/${id}`,
         {
           method: "PUT",
           headers: {
