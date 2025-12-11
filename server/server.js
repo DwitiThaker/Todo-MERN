@@ -10,13 +10,21 @@ const app = express();
 
 // app.use(cors()); 
 
-const corsOptions = {
-  origin: ["http://localhost:5173"," https://client-zlnl.onrender.com"], 
-  methods: "GET,  POST, PUT, DELETE, PATCH, HEAD",
-  credentials: true,
-}
+const allowedOrigins = ["http://localhost:5173", "https://client-zlnl.onrender.com"];
 
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: (origin, callback) => {
+    console.log("CORS: incoming origin ->", origin);
+    if (!origin) return callback(null, true);            // allow non-browser requests
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(null, false);                        // will NOT set ACAO
+  },
+  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  credentials: true
+}));
+app.options('*', cors());
+
+// app.use(cors(corsOptions));
 
 
 
@@ -27,7 +35,7 @@ app.use("/api/auth", router)
 app.use("/api/todo", todo_router)
 app.use(errorMiddleware);
 
-const PORT = 5000;
+const PORT = process.env.PORT ||5000;
 
 connectDb().then(() => {
   app.listen(PORT, () => {
