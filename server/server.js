@@ -11,7 +11,7 @@ const app = express();
 // app.use(cors()); 
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173"," https://client-zlnl.onrender.com"], 
   methods: "GET,  POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 }
